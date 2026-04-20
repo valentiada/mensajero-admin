@@ -12,7 +12,7 @@ import {
 
 // ─── API ─────────────────────────────────────────────────────────────────────
 
-const API = '/api';
+const API = (import.meta.env.VITE_API_URL || '') + '/api';
 
 async function apiFetch(path: string, opts: RequestInit = {}, token?: string) {
   const headers: Record<string, string> = {
